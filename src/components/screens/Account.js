@@ -1,9 +1,12 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, } from 'react-native'
+import PanelUser from "../auth/PanelUser"
+import LoginForm from "../auth/LoginForm";
 const Account = () => {
+  const auth = null;
   return (
     <View style={styles.container}>
-        <Text>Account</Text>
+       {auth ? <PanelUser/> :  <LoginForm/>}
     </View>
   )
 }
