@@ -3,11 +3,15 @@ import { react } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { StyleSheet, View } from "react-native";
 import Navigation from "./src/components/navigation/Navigation";
+//importacion de nuestro context
+import { AuthProvider } from "./src/context/AuthContext";
 export default function App() {
   return (
     <View style={styles.container}>
       <NavigationContainer>
-        <Navigation />
+        <AuthProvider>
+          <Navigation />
+        </AuthProvider>
       </NavigationContainer>
     </View>
   );
@@ -15,6 +19,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop:20,
+    paddingTop: 20,
   },
 });
