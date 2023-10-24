@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { StyleSheet, Text, View } from "react-native";
+import {getPokemonFavorite} from "../../service/favoriteService"
 const Favorite = () => {
   return (
     <View style={styles.container}>
@@ -12,4 +13,5 @@ const styles = StyleSheet.create({
     padding: 10,
   },
 });
+
 export default Favorite;
