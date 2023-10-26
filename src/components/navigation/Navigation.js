@@ -13,7 +13,7 @@ import FavoriteNavigation from "./FavoriteNavigation";
 const Navigation = () => {
   return (
     //Definira las opciones de navegacion y los componentes a renderizar
-       <Tab.Navigator>
+       <Tab.Navigator initialRouteName="Account">
         <Tab.Screen name="Favorite" component={FavoriteNavigation} options={{
           tabBarLabel:"Favoritos",
           tabBarIcon:({color, size})=>(

@@ -24,3 +24,26 @@ export async function addPokemonFavorite(id) {
     throw error;
   }
 }
+
+// function que comprueba si un pokemon ya esta agregado en la lista de favorites
+
+export async function isPokemonFavorite(id){
+  try {
+    const response = await getPokemonFavorite()
+    // include resibe un array y busca el parametro, devuelve un boolean
+    return includes(response, id)
+  } catch (error) {
+    throw error
+  }
+}
+
+//Function para eliminar de la lista de favoritos
+export async function removePokemonFavorite (id){
+    try {
+      const favorites = await getPokemonFavorite();
+      const newFavorites = pull(favorites, id);
+      await AsyncStorage.setItem(FAVORITE_STORAGE, JSON.stringify(newFavorites))
+    } catch (error) {
+      throw error      
+    }
+}
